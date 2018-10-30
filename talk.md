@@ -1,3 +1,17 @@
+<style>
+    body {
+        background: white }
+    section {
+        background: white;
+        color: black;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) }
+</style>
 <script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -22,14 +36,15 @@ layout: false
 * Finding stuff
 
 ---
-<img height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Typewriter_%284855182596%29.jpg/1599px-Typewriter_%284855182596%29.jpg">
 
---
-
-
-<img height="200" src="https://upload.wikimedia.org/wikipedia/commons/0/00/Rokli_mechanical_calculator_1.jpg">
+<section>
+<h2>What is a terminal?</h2>
+</section>
 
 ---
+
+## What is a terminal?
+
 
 <img height="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/DEC_VT100_terminal.jpg/1013px-DEC_VT100_terminal.jpg">
 
@@ -37,6 +52,20 @@ layout: false
 
 <img height="200" src="https://c2.staticflickr.com/4/3029/2627291590_66060a771b_o.jpg">
 
+???
+
+If you google for terminal you may get images like this
+
+A terminal is an end point of a computer facing the user
+
+At the other end one could have the real computer filling a room like this
+
+Now all of this is combined into this (laptop) and much more powerful
+
+---
+<section>
+<h2>What is a shell?</h2>
+</section>
 ---
 
 ## Shell
@@ -47,14 +76,45 @@ services.*
 * *It is named a shell because it is a layer around the operating system
 kernel (Wikipedia)*
 
-<div class="col-md-12">
 <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrJeHObbV2Y-Drb7P3vXFHnYoO-bU3Ii7haw5vqT-2wTUE3yfMg">
-</div>
+
+* *It is a program running on the computer accepting user input*
+
+* *A handful of different shell programs (dialects) exist*
+
+    + Bourne shell (`/bin/sh`)
+    + Bourne again shell (`/bin/bash`) - often default/de facto standard
+    + C-shell (`/bin/csh`)
+    + T-C-shell (`/bin/tcsh`)
+
+
+
 ---
 
-## Why
+<section>
+<h2>What is a CLI?</h2>
+</section>
 
-GUI vs CLI
+---
+## What is a CLI?
+
+* CLI = command-line interface
+* GUI = graphical user interface
+
+--
+
+### In practice
+
+* terminal
+* shell
+* CLI
+
+different names for the same thing
+
+---
+
+## Graphical vs command-line interface
+
 
 * you want the computer to do stuff for you
 * you need to communicate with the computer somehow
@@ -74,39 +134,39 @@ GUI vs CLI
 * Can be combined in many ways
 * Piping command means chaninig output from to input to another
 
-
 ---
 
-## Navigation
+<section>
+<h2>How do I start a  CLI?</h2>
+</section>
 
-* The *file system* organizes data into files and directories (folders)
-* Directories are special files that are contains of other files
-* Often called a file tree
-* The begining of the tree is called the root "/"
+---
+## How do I start a  CLI?
 
-<div class="row">
-<div class="col-md-6">
-<img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajiMVifhNZj_GfkJ53S7AfxQIm330z6hIiYi19hKt6jMWTNgyzg"> 
-<ul>
-<li> Directories are branches</li>
-<li> Files are leaves</li>
-</ul>
-</div>
-<div class="col-md-6">
-<img class="img-responsive" src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif"> 
-<ul><li> Inverted tree</li></ul>
-</div>
-</div>
+* Search for a program with the `terminal` (or similar)
+* Start a terminal session in jupyter (see lab instruction)
 
-???
+--
 
-* Files names often have a dot, the latter part is the extension 
-* signifies type of file
-* convention not requirement
+~~~
+$ █
 
+
+
+~~~
+
+* prompt (`$`): computer asking for input
+* cursor ( `▒` ): where characters you type go in
+
+---
+<section>
+<h2>How do I find help?</h2>
+</section>
 ---
 
 ## Getting help
+
+The `help` command
 
 ```
 $ help
@@ -133,33 +193,13 @@ A star (*) next to a name means that the command is disabled.
  case WORD in [PATTERN [| PATTERN]...)>  read [-ers] [-a array] [-d delim] [->
  cd [-L|[-P [-e]] [-@]] [dir]            readarray [-n count] [-O origin] [-s>
  command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ...] o>
- compgen [-abcdefgjksuv] [-o option] [>  return [n]
- complete [-abcdefgjksuv] [-pr] [-DE] >  select NAME [in WORDS ... ;] do COMM>
- compopt [-o|+o option] [-DE] [name ..>  set [-abefhkmnptuvxBCHP] [-o option->
- continue [n]                            shift [n]
- coproc [NAME] command [redirections]    shopt [-pqsu] [-o] [optname ...]
- declare [-aAfFgilnrtux] [-p] [name[=v>  source filename [arguments]
- dirs [-clpv] [+N] [-N]                  suspend [-f]
- disown [-h] [-ar] [jobspec ... | pid >  test [expr]
- echo [-neE] [arg ...]                   time [-p] pipeline
- enable [-a] [-dnps] [-f filename] [na>  times
- eval [arg ...]                          trap [-lp] [[arg] signal_spec ...]
- exec [-cl] [-a name] [command [argume>  true
- exit [n]                                type [-afptP] name [name ...]
- export [-fn] [name[=value] ...] or ex>  typeset [-aAfFgilnrtux] [-p] name[=v>
- false                                   ulimit [-SHabcdefiklmnpqrstuvxPT] [l>
- fc [-e ename] [-lnr] [first] [last] o>  umask [-p] [-S] [mode]
- fg [job_spec]                           unalias [-a] name [name ...]
- for NAME [in WORDS ... ] ; do COMMAND>  unset [-f] [-v] [-n] [name ...]
- for (( exp1; exp2; exp3 )); do COMMAN>  until COMMANDS; do COMMANDS; done
- function name { COMMANDS ; } or name >  variables - Names and meanings of so>
- getopts optstring name [arg]            wait [-n] [id ...]
- hash [-lr] [-p pathname] [-dt] [name >  while COMMANDS; do COMMANDS; done
- help [-dms] [pattern ...]               { COMMANDS ; }
+...
 ```
 
 ---
 ### Manual pages
+
+The `man` command
 
 ```
 $ man echo
@@ -186,251 +226,219 @@ DESCRIPTION
        --version
               output version information and exit
 
-       If -e is in effect, the following sequences are recognized:
-
-       \\     backslash
-
-       \a     alert (BEL)
-
-       \b     backspace
-
-       \c     produce no further output
-
-       \e     escape
-
-       \f     form feed
-
-       \n     new line
-
-       \r     carriage return
-
-       \t     horizontal tab
-
-       \v     vertical tab
-
-       \0NNN  byte with octal value NNN (1 to 3 digits)
-
-       \xHH   byte with hexadecimal value HH (1 to 2 digits)
-
-       NOTE: your shell may have its own version of echo, which usually super‐
-       sedes the version described here.  Please refer to your  shell's  docu‐
-       mentation for details about the options it supports.
-
-AUTHOR
-       Written by Brian Fox and Chet Ramey.
-
-REPORTING BUGS
-       GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
-       Report echo translation bugs to <http://translationproject.org/team/>
-
-COPYRIGHT
-       Copyright  ©  2016  Free Software Foundation, Inc.  License GPLv3+: GNU
-       GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
-       This is free software: you are free  to  change  and  redistribute  it.
-       There is NO WARRANTY, to the extent permitted by law.
-
-SEE ALSO
-       Full documentation at: <http://www.gnu.org/software/coreutils/echo>
-       or available locally via: info '(coreutils) echo invocation'
-
-GNU coreutils 8.26                March 2017                           ECHO(1)
+...
 ```
+
+---
+~~~
+$ echo Hello world!
+Hello world!
+$ echo "Hello world!"
+Hello world!
+$ echo 'Hello world!'
+Hello world!
+~~~
+---
+
+## Navigation
+
+* The *file system* organizes data into files and directories (folders)
+* Directories are special files that are contains of other files
+* Often called a file tree
+* The beginning of the tree is called the root "/"
+
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajiMVifhNZj_GfkJ53S7AfxQIm330z6hIiYi19hKt6jMWTNgyzg"> 
+
+
+* Directories are branches
+* Files are leaves
+
+---
+
+## A tree view of a file system
+
+<img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif"> 
+
+
+???
+
+* Files names often have a dot, the latter part is the extension 
+* signifies type of file
+* convention not requirement
+
+---
+
+<section>
+<h2>Where am I?</h2>
+</section>
+
 ---
 
 ## Looking around
 
-* **prompt** (*noun*) an act of encouraging a hesitating speaker. (Wikipedia)
+Concept of location: current/working directory
 
-
-* **REPL** read-execute-print-loop
-
-
-
-{% if False %}
-<div class="col-md-12">
-<div class="embed-responsive embed-responsive-16by9">
-<iframe src="https://localhost:4200"></iframe>
-</div>
-</div>
-{% endif %}
-<div class="col-md-6">
-<ul>
-<li><tt>pwd</tt></li>
-<li><tt>cd</tt></li>
-</ul>
-</div>
-<div class="col-md-6">
-<li><tt>ls</tt></li>
-<li><tt>cat</tt></li>
-</div>
+### Example
+~~~
+$ pwd 
+/home/jane
+$ ls
+file1  file1.bak  file1.tmp  tmp
+$ ls /home/pablo
+file1 file1.bak file2
+~~~
+<img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" height=300> 
 
 ---
+### Example
 
+~~~
+$ echo ~
+/home/jane
+$ echo ~pablo
+/home/pablo
+$ ls ../pablo
+file1 file1.bak file2
+~~~
 
+<img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" height=250> 
 
-???
-
-What do you see
-- a dollar sign and a blinking square
-- the dollar sign is a prompt asking for input
-- the blinking square is a cursor
-- try changing the prompt PS1=
-
-The REPL bash
-- enter a word
-- computer finds a program that matches that word
-- runs that program
-- prints result
-- ask for more
-
-What happens if you type something wrong
-
-Where do we start?
-- whatabout `help`
-- whatabout hello. command for printing is...`echo`
-- terminal shortcuts? ^A ^E ^P ^L
-
-questions we may want to ask
-- `whoami`
-- where are we?  `pwd` print working directory
-    - the first directory after logging is called home directory
-    - HOME is an environment variable
-    - ~ is an alias for home
-    - ~user is an alias for user's home
-    - *current working directory* the default director our computer things we
-      want to work with when running programs
-
-- what's in here? `ls`
-    - long format
-        - file type - permissions - owner - size - date (of last modification)
-    - hidden files
-    - recursive
-    - arguments/ defaults
-    - what is '.' and '..'?
-    - *try invalid argument*
-
-* commands taking arguments/parameters
-* commands with options single or double dash
-* demonstrate tab completion
-
+Directory shortcuts
+- ~ (home) 
+- . (current directory) 
+- .. (parent directory)
 
 ---
 ## Moving around
 
-* *cd* - change directory
-* shortcuts: 
-	- ~ (home) 
-	- . (current directory) 
-	- .. (parent directory)
-	
-    
-* relative/absolute path of a file 
+* `cd` - change directory
 
-Example
+### Example
 
-```
-/home/guest/dir1  # <- current directory
-└── file1
-/home/guest/dir2
-└── file2
-```
-* You are in dir1 referencing file2
-* absolute path: `/home/guest/dir2/file2`
-* relative path: `../dir2/file2`
+~~~
+$ cd ~pablo
+$ pwd
+/home/pablo
+$ ls 
+file1 file1.bak file2
+~~~
 
-
-
-{% if False %}
-<div class="col-md-9">
-<div class="embed-responsive embed-responsive-4by3">
-<iframe src="https://localhost:4200"></iframe>
-</div>
-</div>
-{% endif %}
-
-???
-
-* cd (without argument)
-* cd dir (argument)
-A useful command is `cd -` if you swap between two different directories
-
-* relative pathds `cd ../Music`
-* absolute paths `cd /home/guest/Music
-* what is a path
-    * path of a filename
-        * generally a sequence of names in the file tree to reach a specific file
-        * names are separated by a forward slash
-        * absolute path starts from the root
-        * relative paths starts from current . (or ..)
-    
+<img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" height=250> 
+---
+<section>
+<h2>How do I view/change/save text in files?</h2>
+</section>
 ---
 
 ## Working with files and direcories
 
+### Saving output in a file
+
+* redirection (>)
+* redirection with append (>>)
+
+~~~
+$ echo "Hello" >  /tmp/saved
+$ ls  >>  /tmp/saved
+~~~
+### What is in the file?
+~~~
+$ cat /tmp/saved
+file1 file1.bak file2
+~~~
+---
+
+### Edit a file with a text editor
+~~~
+$ nano /tmp/saved
+~~~
+~~~
+  GNU nano 2.9.8                      /tmp/saved                                
+____________________________________________________________________________
+
+file1 file1.bak file2
+
+
+
+
+
+
+
+
+
+
+
+
+^G Get Help  ^O Write Out ^W Where Is  ^K Cut Text  ^J Justify   ^C Cur Pos
+^X Exit      ^R Read File ^\ Replace   ^U Uncut Text^T To Spell  ^_ Go To Line
+
+
+
+
+~~~
+
+### Remove the file
+~~~
+$ rm /tmp/saved
+~~~
+
+---
+
+### Creating and removing dictionaries
 
 * `mkdir` create directory
 * `rmdir` remove directory
-* `nano file` edit/create a file
-* `cat` print contents of files
-* `rm` remove file
 
-
-{% if False %}
-<div class="col-md-9">
-<div class="embed-responsive embed-responsive-4by3">
-<iframe src="https://localhost:4200"></iframe>
-</div>
-</div>
-{% else %}
 ```
 $ mkdir thesis
+$ cd thesis
+$ nano thesis.tex
+...
 ```
-{% endif %}
 
-???
-15 min
+~~~
+$ cd ..
+$ rmdir thesis
+rmdir: failed to remove 'thesis': Directory not empty
+$ rm -r thesis
+~~~
 
-* create del files  and direcories
-* `mkdir thesis`
+* be careful with this command!
+---
 
+<section>
+<h2>I want to rerun a set of commands many times. How?</h2>
+</section>
 
 ---
 
-### Special characters
+##  Shell scripts
 
-* `>`: redirect (screen) output
-	```$ ls > filelist```
-* `<`: redirect (terminal) input
-    ```$ cat <```
-* `|`: piping (passing output to input) `$ cat file | sort`
-* `*` wildcard (matches anything) `$ ls *.txt`
-* `?` wildcard (matches any single character) `$ ls ?.txt`
-* `[]` selection
+* Save bash commands in a file
+* make the file executable
+* execute file with  `bash file` or `./file`
+* put it in a directory in your `PATH`
 
+### Variables
+* Scripts often make use of shell variables
+* They are created on the fly by assignment 
+~~~
+var="some value"
+~~~
+* They are referenced with a dollar sign
+~~~
+echo $var 
+~~~
+    - prints `some value` to the screen
 
-```
-$ ls h*.txt
-hello.txt  hi.txt  ho.txt  h.txt  hx.txt
-$ ls h?.txt
-hi.txt ho.txt hx.txt
-$ ls h[io].txt
-hi.txt ho.txt
-
-```
 ---
+
 ## Repetition
 
 * execute same code several times with small variations
 * loop (for-loop, do-loop)
 
 
-{% if False %}
-<div class="col-md-9">
-<div class="embed-responsive embed-responsive-4by3">
-<iframe src="https://localhost:4200"></iframe>
-</div>
-</div>
-{% else %}
 from 
 ```
 goostats NENE01729A.txt stats-NENE01729A.txt
@@ -449,30 +457,7 @@ do
 goostats $txt stats-$txt
 done
 ```
-{% endif %}
 
-
-???
-* explain loop variable/loop value
-
-* exercise: backup a lot of files
-* `cp *.dat *.dat.bkp`
-* with >2 args, last must be a directory
-* avoid spaces in filenames
-* `for f in a file; do echo $f; done`
-
-* The example:
-    - run goostat on each of the files
-
-* build up the loop in steps
-
-* history commands
-* history
-* !! !$
-
-* sample loop to file which overwrites/appends
-* dry run with echo
-* nested loop
 
 ---
 
@@ -496,23 +481,63 @@ $ fi
 yes
 ```
 
-Shortcut control characters
+---
+## Example
+~~~
+#backup.sh
+for i in $(ls *$1*)
+do
+    if -f $i.bkp
+    then
+        mv $i.bkp $i.bkp2
+    fi
+    cp -v $i $i.bkp
+done
+~~~
+What is happening?
+
+--
+* command line arguments enter the script as numeric variables ($1, $2, $3...)
+* $0 is the name of the running script
+* indentation is for readability but not required
+---
+
+## Shortcut control characters
 
 * `&&` continue if ok (exit status zero)
 * `||` continue if not ok (exit status non-zero)
 
+### List a file and its contents if it exists
+~~~
+$ ls /tmp/saved && cat /tmp/saved
+/tmp/saved
+file1 file1.bak file2
+~~~
+### Create a new directory if it does not exist
+~~~
+$ ls /tmp/newdir || mkdir /tmp/newdir
+~~~
+
 ---
 
-##  Scripts
+# Summary
 
-* Save bash commands in a file
-* make the file executable
-* execute file with  `bash file` or `./file`
-* put it in a directory in your `PATH`
+## Commands used
 
----
+* help
+* man
+* echo
+* pwd
+* ls
+* for
+* if
+* cat
+* rm
+* mkdir
+* rmdir
 
+-- -
 
-### Bash reference summary
+### Bash reference 
 
 http://swcarpentry.github.io/shell-novice/reference/
