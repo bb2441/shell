@@ -485,9 +485,9 @@ yes
 ## Example
 ~~~
 #backup.sh
-for i in $(ls *$1*)
+for i in $(ls *$1*|grep -v bkp)
 do
-    if -f $i.bkp
+    if [ -f $i.bkp ]
     then
         mv $i.bkp $i.bkp2
     fi
