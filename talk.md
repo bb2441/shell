@@ -497,9 +497,13 @@ done
 What is happening?
 
 --
-* command line arguments enter the script as numeric variables ($1, $2, $3...)
-* $0 is the name of the running script
+* command line arguments enter the script as numeric variables (`$1`, `$2`, `$3`...,)
+* `$0` is the name of the running script
+* `ls *$1*` lists all files whose name contain the first argument
+* the output is *piped* to `grep -v bkp` which excludes all files with `bkp`
 * indentation is for readability but not required
+* each matching file is copied (`cp`) to a new file with added extension `.bkp`
+* in case that already exists the `bkp` file is moved (`mv`) to `.bkp2`
 ---
 
 ## Shortcut control characters
