@@ -1,3 +1,4 @@
+name: cover
 <style>
     body {
         background: white }
@@ -15,7 +16,7 @@
 <script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-# shell
+# The Bash shell
 
 ## 
 
@@ -26,7 +27,37 @@ BB2441 The shell
 
 layout: false
 
-## Goals
+
+
+* [The Bash shell](#cover)
+    + [Learning objectives](#goals)
+    + [What is a terminal](#terminal)
+    + [Shell](#shell)
+        - [What is a CLI](#cli)
+        - [Graphical vs command-line interface](#cli)
+        - [How do I start a  CLI](#startcli)
+        - [Getting help](#startcli)
+        - [Manual pages](#man)
+    + [The file system](#navigation)
+        - [Navigation](#navigation)
+        - [A tree view of a file system](#navigation)
+        - [Looking around](#looking)
+        - [Moving around](#moving)
+    + [Working with files and direcories](#files)
+        - [Files](#files)
+        - [Directories](#directories)
+    + [Shell scripts](#scripts)
+        - [Variables](#scripts)
+        - [Logic](#logic)
+    + [Summary](#summary)
+        - [Commands used](#summary)
+        - [Bash reference ](#summary)
+
+
+---
+
+name: goals
+## Learning objectives
 
 * Navigation in the file system
 * Working with files
@@ -43,6 +74,7 @@ layout: false
 
 ---
 
+name: terminal
 ## What is a terminal?
 
 
@@ -67,6 +99,7 @@ Now all of this is combined into this (laptop) and much more powerful
 <h2>What is a shell?</h2>
 </section>
 ---
+name: shell
 
 ## Shell
 
@@ -96,14 +129,14 @@ kernel (Wikipedia)*
 </section>
 
 ---
-## What is a CLI?
+name: cli
+### What is a CLI?
 
 * CLI = command-line interface
 * GUI = graphical user interface
 
---
 
-### In practice
+#### In practice
 
 * terminal
 * shell
@@ -112,8 +145,9 @@ kernel (Wikipedia)*
 different names for the same thing
 
 ---
+name: gui-cli
 
-## Graphical vs command-line interface
+### Graphical vs command-line interface
 
 
 * you want the computer to do stuff for you
@@ -141,7 +175,9 @@ different names for the same thing
 </section>
 
 ---
-## How do I start a  CLI?
+name: startcli
+
+### How do I start a  CLI?
 
 * Search for a program with the `terminal` (or similar)
 * Start a terminal session in jupyter (see lab instruction)
@@ -164,7 +200,7 @@ $ █
 </section>
 ---
 
-## Getting help
+### Getting help
 
 The `help` command
 
@@ -197,6 +233,8 @@ A star (*) next to a name means that the command is disabled.
 ```
 
 ---
+name: man
+
 ### Manual pages
 
 The `man` command
@@ -239,8 +277,11 @@ $ echo 'Hello world!'
 Hello world!
 ~~~
 ---
+name: navigation
 
-## Navigation
+## The file system
+
+### Navigation
 
 * The *file system* organizes data into files and directories (folders)
 * Directories are special files that are contains of other files
@@ -254,8 +295,9 @@ Hello world!
 * Files are leaves
 
 ---
+name: file-tree
 
-## A tree view of a file system
+### A tree view of a file system
 
 <img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif"> 
 
@@ -273,12 +315,12 @@ Hello world!
 </section>
 
 ---
+name: looking
 
-## Looking around
+### Looking around
 
 Concept of location: current/working directory
 
-### Example
 ~~~
 $ pwd 
 /home/jane
@@ -290,7 +332,7 @@ file1 file1.bak file2
 <img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" height=300> 
 
 ---
-### Example
+name: example
 
 ~~~
 $ echo ~
@@ -309,11 +351,11 @@ Directory shortcuts
 - .. (parent directory)
 
 ---
-## Moving around
+name: moving
+
+### Moving around
 
 * `cd` - change directory
-
-### Example
 
 ~~~
 $ cd ~pablo
@@ -329,10 +371,13 @@ file1 file1.bak file2
 <h2>How do I view/change/save text in files?</h2>
 </section>
 ---
+name: files
 
 ## Working with files and direcories
 
-### Saving output in a file
+### Files
+
+#### Saving output in a file
 
 * redirection (>)
 * redirection with append (>>)
@@ -341,14 +386,15 @@ file1 file1.bak file2
 $ echo "Hello" >  /tmp/saved
 $ ls  >>  /tmp/saved
 ~~~
-### What is in the file?
+#### What is in the file?
 ~~~
 $ cat /tmp/saved
 file1 file1.bak file2
 ~~~
 ---
+name: edit
 
-### Edit a file with a text editor
+#### Edit a file with a text editor
 ~~~
 $ nano /tmp/saved
 ~~~
@@ -377,14 +423,17 @@ file1 file1.bak file2
 
 ~~~
 
-### Remove the file
+#### Remove the file
 ~~~
 $ rm /tmp/saved
 ~~~
 
 ---
+name: directories
 
-### Creating and removing dictionaries
+### Directories
+
+#### Creating and removing dictionaries
 
 * `mkdir` create directory
 * `rmdir` remove directory
@@ -411,8 +460,9 @@ $ rm -r thesis
 </section>
 
 ---
+name: scripts
 
-##  Shell scripts
+## Shell scripts
 
 * Save bash commands in a file
 * make the file executable
@@ -432,8 +482,10 @@ echo $var
     - prints `some value` to the screen
 
 ---
+name: logic
+### Logic
 
-## Repetition
+#### Repetition
 
 * execute same code several times with small variations
 * loop (for-loop, do-loop)
@@ -460,8 +512,9 @@ done
 
 
 ---
+name: branching
 
-## Branching: `if` statements
+#### Branching: `if` statements
 
 Control characters
 
@@ -482,7 +535,9 @@ yes
 ```
 
 ---
-## Example
+name: example
+
+#### Example
 ~~~
 #backup.sh
 for i in $(ls *$1*|grep -v bkp)
@@ -502,27 +557,28 @@ What is happening?
 * indentation is for readability but not required
 ---
 
-## Shortcut control characters
+#### Shortcut control characters
 
 * `&&` continue if ok (exit status zero)
 * `||` continue if not ok (exit status non-zero)
 
-### List a file and its contents if it exists
+#### List a file and its contents if it exists
 ~~~
 $ ls /tmp/saved && cat /tmp/saved
 /tmp/saved
 file1 file1.bak file2
 ~~~
-### Create a new directory if it does not exist
+#### Create a new directory if it does not exist
 ~~~
 $ ls /tmp/newdir || mkdir /tmp/newdir
 ~~~
 
 ---
+name: summary
 
-# Summary
+## Summary
 
-## Commands used
+### Commands used
 
 * help
 * man
