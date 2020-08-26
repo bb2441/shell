@@ -389,7 +389,10 @@ $ ls  >>  /tmp/saved
 #### What is in the file?
 ~~~
 $ cat /tmp/saved
-file1 file1.bak file2
+Hello
+file1
+file1.bak
+file2
 ~~~
 ---
 name: edit
