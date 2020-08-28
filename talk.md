@@ -472,6 +472,77 @@ name: scripts
 * execute file with  `bash file` or `./file`
 * put it in a directory in your `PATH`
 
+---
+
+### Save bash commands in a file
+
+You use a text editor of your choice to write bash statements that are to be
+executed together
+
+### make the file executable
+
+On a Linux system you can set different file permissions for different user
+categories; the
+permissions are readable (r), writeable (w) and executable (x),  and can be
+defined for the owner, a user group, or for others. The output of an `ls`
+command of an ordinary file looks typically like
+~~~
+$ ls -l document.md
+-rw-r--r-- 1 user user 11224 aug 26 12:10 document.md
+~~~
+where the initial string shows the permissions for owner, group and others
+respectively
+~~~
+ r w x   r w x   r w x
+(owner) (group) (others)
+~~~
+
+---
+
+### execute file with  `bash file` or `./file`
+
+A bash script in the current directory may be executed with the file as an
+argument to the bash interpreter
+~~~
+$ bash script
+~~~
+To execute a script in the current directory directly from the command line (i.e. typing only its name)
+it has to be executable, and have an 'x' in the file permissions. You can set
+the file permissions with the `chmod` command
+~~~
+$ ls -l script
+-rw-r--r-- 1 user user 11224 aug 26 12:10 script
+~~~
+~~~
+$ chmod +x script
+$ ls -l script
+-rwxr-xr-x 1 user user 11224 aug 26 12:10 script
+$ ./script
+~~~
+
+---
+
+### put it in a directory in your `PATH`
+
+The `./script` notation specifies that you intend to run a script from the
+current directory. You may type
+~~~
+$ script
+~~~
+without the directory part, without really knowing where it is, as long as it
+is in a folder that is in the `PATH` shell environment variable
+
+* **In the command line interface you run programs by typing the name of the program.**
+* **When typing a program name the computer will go through a sequence of
+  directories defined by `PATH` to look for an executable file by that name**
+
+~~~
+$ echo $PATH
+/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+~~~
+
+---
+
 ### Variables
 * Scripts often make use of shell variables
 * They are created on the fly by assignment 
