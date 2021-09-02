@@ -166,7 +166,7 @@ name: gui-cli
 
 * A collection of well defined programs that does one thing well
 * Can be combined in many ways
-* Piping command means chaninig output from to input to another
+* Piping command means chaining output from to input to another
 
 ---
 
