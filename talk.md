@@ -674,4 +674,4 @@ name: summary
 
 ### Bash reference 
 
-http://swcarpentry.github.io/shell-novice/reference/
+http://swcarpentry.github.io/shell-novice/reference.html
